@@ -1,0 +1,37 @@
+{
+  "storyId": "jezis-a-deti",
+  "title": "Ježíš a děti",
+  "rewardCardId": "jezis-ma-deti-rad",
+  "slides": [
+    {
+      "id": "deti-01",
+      "emoji": "👨‍👩‍👧",
+      "text": "Lidé přiváděli děti k Ježíši."
+    },
+    {
+      "id": "deti-02",
+      "emoji": "🤚",
+      "text": "Někteří učedníci si mysleli, že děti nemají Ježíše rušit."
+    },
+    {
+      "id": "deti-03",
+      "emoji": "✨",
+      "text": "Ježíš ale řekl: Nechte děti přicházet ke mně."
+    },
+    {
+      "id": "deti-04",
+      "emoji": "🧒",
+      "text": "Děti byly pro Ježíše důležité."
+    },
+    {
+      "id": "deti-05",
+      "emoji": "🤲",
+      "text": "Ježíš je přijímal laskavě a žehnal jim."
+    },
+    {
+      "id": "deti-06",
+      "emoji": "🧡",
+      "text": "Ježíš má děti rád a zve je k sobě."
+    }
+  ]
+}
