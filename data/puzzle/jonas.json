@@ -1,0 +1,19 @@
+{
+  "storyId": "jonas",
+  "title": "Poskládej Jonáše",
+  "intro": "Poskládej obrázek z příběhu o Jonášovi.",
+  "rewardCardId": "modlitba",
+  "rewardTitle": "Modlitba",
+  "rewardEmoji": "🙏",
+  "tiles": [
+    { "id": "t1", "emoji": "☁️", "label": "mrak" },
+    { "id": "t2", "emoji": "⚡", "label": "blesk" },
+    { "id": "t3", "emoji": "☁️", "label": "mrak" },
+    { "id": "t4", "emoji": "🌊", "label": "vlna" },
+    { "id": "t5", "emoji": "⛵", "label": "loď" },
+    { "id": "t6", "emoji": "🐋", "label": "ryba" },
+    { "id": "t7", "emoji": "🙏", "label": "modlitba" },
+    { "id": "t8", "emoji": "🌊", "label": "moře" },
+    { "id": "t9", "emoji": "🏙️", "label": "Ninive" }
+  ]
+}
