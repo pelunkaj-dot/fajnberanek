@@ -1,0 +1,19 @@
+{
+  "storyId": "noe",
+  "title": "Poskládej archu",
+  "intro": "Poskládej obrázek z příběhu o Noem.",
+  "rewardCardId": "holubice",
+  "rewardTitle": "Holubice",
+  "rewardEmoji": "🕊️",
+  "tiles": [
+    { "id": "t1", "emoji": "☁️", "label": "mrak" },
+    { "id": "t2", "emoji": "🌈", "label": "duha" },
+    { "id": "t3", "emoji": "☁️", "label": "mrak" },
+    { "id": "t4", "emoji": "🐘", "label": "slon" },
+    { "id": "t5", "emoji": "⛵", "label": "archa" },
+    { "id": "t6", "emoji": "🦁", "label": "lev" },
+    { "id": "t7", "emoji": "🌿", "label": "země" },
+    { "id": "t8", "emoji": "🕊️", "label": "holubice" },
+    { "id": "t9", "emoji": "🌳", "label": "strom" }
+  ]
+}
