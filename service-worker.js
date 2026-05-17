@@ -1,4 +1,4 @@
-const CACHE_NAME = "fajnberanek-v10";
+const CACHE_NAME = "fajnberanek-v11";
 
 const APP_SHELL = [
   "./",
@@ -41,6 +41,11 @@ const APP_SHELL = [
   "./data/cards/jezis-a-deti.json",
   "./data/find-scene/jezis-a-deti.json",
   "./data/puzzle/jezis-a-deti.json",
+
+  "./data/mini-stories/david.json",
+  "./data/cards/david.json",
+  "./data/find-scene/david.json",
+  "./data/puzzle/david.json",
 
   "./manifest.webmanifest"
 ];
