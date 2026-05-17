@@ -1,0 +1,91 @@
+.primary-button,
+.soft-button {
+  border: 0;
+  border-radius: 999px;
+  min-height: 52px;
+  padding: 0 22px;
+  cursor: pointer;
+  transition: transform .16s ease, box-shadow .16s ease, background .16s ease;
+}
+
+.primary-button {
+  background: var(--primary);
+  color: white;
+  font-weight: 800;
+  box-shadow: 0 10px 24px rgba(79, 157, 120, .25);
+}
+
+.primary-button:active,
+.soft-button:active,
+.story-card:active {
+  transform: scale(.98);
+}
+
+.soft-button {
+  background: #fff5dc;
+  color: var(--ink);
+  font-weight: 700;
+}
+
+.section-title {
+  margin: 10px 2px 14px;
+  font-size: 1.35rem;
+}
+
+.story-card {
+  border: 0;
+  width: 100%;
+  text-align: left;
+  background: rgba(255,255,255,.82);
+  border-radius: var(--radius-lg);
+  padding: 18px;
+  box-shadow: 0 12px 30px rgba(80, 60, 30, 0.1);
+  cursor: pointer;
+}
+
+.story-card-top {
+  display: flex;
+  gap: 14px;
+  align-items: center;
+}
+
+.story-icon {
+  width: 58px;
+  height: 58px;
+  border-radius: 20px;
+  display: grid;
+  place-items: center;
+  background: #fff2cf;
+  font-size: 32px;
+  flex: 0 0 auto;
+}
+
+.story-card h3 {
+  margin: 0;
+  font-size: 1.25rem;
+}
+
+.story-card p {
+  margin: 4px 0 0;
+  color: var(--muted);
+  line-height: 1.35;
+}
+
+.badge-row {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px;
+  margin-top: 14px;
+}
+
+.badge {
+  display: inline-flex;
+  align-items: center;
+  min-height: 30px;
+  padding: 0 10px;
+  border-radius: 999px;
+  background: #f3eadb;
+  color: #6b5b42;
+  font-size: .86rem;
+  font-weight: 700;
+}
