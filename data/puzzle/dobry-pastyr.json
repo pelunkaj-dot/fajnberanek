@@ -1,0 +1,19 @@
+{
+  "storyId": "dobry-pastyr",
+  "title": "Poskládej pastvinu",
+  "intro": "Poskládej klidný obrázek z příběhu o dobrém pastýři.",
+  "rewardCardId": "zelena-pastva",
+  "rewardTitle": "Zelená pastva",
+  "rewardEmoji": "🌿",
+  "tiles": [
+    { "id": "t1", "emoji": "☀️", "label": "slunce" },
+    { "id": "t2", "emoji": "☁️", "label": "mrak" },
+    { "id": "t3", "emoji": "🌳", "label": "strom" },
+    { "id": "t4", "emoji": "🐑", "label": "ovečka" },
+    { "id": "t5", "emoji": "🧡", "label": "pastýř" },
+    { "id": "t6", "emoji": "💧", "label": "voda" },
+    { "id": "t7", "emoji": "🌿", "label": "pastva" },
+    { "id": "t8", "emoji": "🏠", "label": "domov" },
+    { "id": "t9", "emoji": "🌼", "label": "květina" }
+  ]
+}
