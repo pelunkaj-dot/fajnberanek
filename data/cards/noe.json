@@ -1,0 +1,30 @@
+{
+  "storyId": "noe",
+  "title": "Kartičky z příběhu Noe",
+  "cards": [
+    {
+      "id": "duha",
+      "title": "Duha naděje",
+      "emoji": "🌈",
+      "description": "Bůh dal duhu jako znamení naděje a nového začátku."
+    },
+    {
+      "id": "archa",
+      "title": "Archa",
+      "emoji": "⛵",
+      "description": "Noe postavil archu, protože důvěřoval Bohu."
+    },
+    {
+      "id": "holubice",
+      "title": "Holubice",
+      "emoji": "🕊️",
+      "description": "Holubice připomíná pokoj a zprávu o nové zemi."
+    },
+    {
+      "id": "zvirata",
+      "title": "Zvířata",
+      "emoji": "🐘",
+      "description": "Do archy přišla zvířata, aby byla zachráněna."
+    }
+  ]
+}
