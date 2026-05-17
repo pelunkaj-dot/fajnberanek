@@ -13,7 +13,7 @@
     "subtitle": "Bouře, veliká ryba a nový začátek",
     "age": "5+",
     "icon": "🐋",
-    "modules": ["mini-stories", "find-scene", "puzzle", "cards"]
+    "modules": ["mini-stories", "coloring", "find-scene", "puzzle", "cards"]
   },
   {
     "id": "david",
@@ -21,7 +21,7 @@
     "subtitle": "Pastýř, odvaha a důvěra",
     "age": "6+",
     "icon": "🎵",
-    "modules": ["mini-stories", "find-scene", "puzzle", "cards"]
+    "modules": ["mini-stories", "coloring", "find-scene", "puzzle", "cards"]
   },
   {
     "id": "dobry-pastyr",
@@ -29,7 +29,7 @@
     "subtitle": "Péče, bezpečí a radost z nalezení",
     "age": "4+",
     "icon": "🐑",
-    "modules": ["mini-stories", "find-scene", "puzzle", "cards"]
+    "modules": ["mini-stories", "coloring", "find-scene", "puzzle", "cards"]
   },
   {
     "id": "jezis-a-deti",
@@ -37,6 +37,6 @@
     "subtitle": "Ježíš má děti rád",
     "age": "4+",
     "icon": "✨",
-    "modules": ["mini-stories", "find-scene", "puzzle", "cards"]
+    "modules": ["mini-stories", "coloring", "find-scene", "puzzle", "cards"]
   }
 ]
