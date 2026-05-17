@@ -1,3 +1,5 @@
+import { renderMiniStory } from "./modules/mini-stories/mini-stories.js";
+
 const screen = document.querySelector("#screen");
 
 const state = {
@@ -114,7 +116,7 @@ function renderStoryDetail(storyId) {
 
   document.querySelectorAll("[data-module-id]").forEach((button) => {
     button.addEventListener("click", () => {
-      renderModulePlaceholder(story, button.dataset.moduleId);
+      openModule(story, button.dataset.moduleId);
     });
   });
 }
@@ -131,6 +133,20 @@ function renderModuleCard(module) {
       </div>
     </button>
   `;
+}
+
+async function openModule(story, moduleId) {
+  if (moduleId === "mini-stories") {
+    await renderMiniStory({
+      screen,
+      story,
+      onBack: () => renderStoryDetail(story.id)
+    });
+
+    return;
+  }
+
+  renderModulePlaceholder(story, moduleId);
 }
 
 function renderModulePlaceholder(story, moduleId) {
