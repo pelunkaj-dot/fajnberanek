@@ -1,5 +1,6 @@
 import { renderMiniStory } from "./modules/mini-stories/mini-stories.js";
 import { renderCards } from "./modules/cards/cards.js";
+import { renderFindScene } from "./modules/find-scene/find-scene.js";
 
 const screen = document.querySelector("#screen");
 
