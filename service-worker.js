@@ -1,4 +1,4 @@
-const CACHE_NAME = "fajnberanek-v14";
+const CACHE_NAME = "fajnberanek-v15";
 
 const APP_SHELL = [
   "./",
@@ -10,6 +10,7 @@ const APP_SHELL = [
 
   "./js/app.js",
   "./js/storage.js",
+  "./js/rewards.js",
   "./js/modules/mini-stories/mini-stories.js",
   "./js/modules/mini-stories/mini-stories.css",
   "./js/modules/cards/cards.js",
