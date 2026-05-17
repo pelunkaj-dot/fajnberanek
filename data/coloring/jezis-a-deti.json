@@ -1,0 +1,15 @@
+{
+  "storyId": "jezis-a-deti",
+  "title": "Ježíš a děti",
+  "subtitle": "Vybarvi Ježíše, děti a srdce radosti.",
+  "parts": [
+    { "id": "sky", "label": "nebe", "defaultColor": "#dff4ff" },
+    { "id": "sun", "label": "slunce", "defaultColor": "#fff3b0" },
+    { "id": "grass", "label": "tráva", "defaultColor": "#d8f3dc" },
+    { "id": "jesusFace", "label": "Ježíš", "defaultColor": "#f2c39b" },
+    { "id": "jesusRobe", "label": "Ježíšův oděv", "defaultColor": "#fef3c7" },
+    { "id": "childOne", "label": "dítě", "defaultColor": "#bfdbfe" },
+    { "id": "childTwo", "label": "dítě", "defaultColor": "#fecdd3" },
+    { "id": "heart", "label": "srdce", "defaultColor": "#fca5a5" }
+  ]
+}
