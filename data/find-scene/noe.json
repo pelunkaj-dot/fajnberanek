@@ -1,0 +1,86 @@
+{
+  "storyId": "noe",
+  "title": "Hledej u archy",
+  "rewardCardId": "archa",
+  "intro": "Najdi v obrázku správné věci z příběhu o Noem.",
+  "scene": [
+    {
+      "id": "archa",
+      "label": "archa",
+      "emoji": "⛵",
+      "x": 48,
+      "y": 48,
+      "size": "large"
+    },
+    {
+      "id": "duha",
+      "label": "duha",
+      "emoji": "🌈",
+      "x": 52,
+      "y": 18,
+      "size": "large"
+    },
+    {
+      "id": "holubice",
+      "label": "holubice",
+      "emoji": "🕊️",
+      "x": 72,
+      "y": 28,
+      "size": "medium"
+    },
+    {
+      "id": "slon",
+      "label": "slon",
+      "emoji": "🐘",
+      "x": 26,
+      "y": 66,
+      "size": "medium"
+    },
+    {
+      "id": "lev",
+      "label": "lev",
+      "emoji": "🦁",
+      "x": 70,
+      "y": 68,
+      "size": "medium"
+    },
+    {
+      "id": "strom",
+      "label": "strom",
+      "emoji": "🌳",
+      "x": 16,
+      "y": 42,
+      "size": "medium"
+    },
+    {
+      "id": "mrak",
+      "label": "mrak",
+      "emoji": "☁️",
+      "x": 82,
+      "y": 14,
+      "size": "small"
+    }
+  ],
+  "tasks": [
+    {
+      "id": "task-01",
+      "targetId": "duha",
+      "instruction": "Najdi duhu."
+    },
+    {
+      "id": "task-02",
+      "targetId": "archa",
+      "instruction": "Najdi archu."
+    },
+    {
+      "id": "task-03",
+      "targetId": "holubice",
+      "instruction": "Najdi holubici."
+    },
+    {
+      "id": "task-04",
+      "targetId": "slon",
+      "instruction": "Najdi slona."
+    }
+  ]
+}
