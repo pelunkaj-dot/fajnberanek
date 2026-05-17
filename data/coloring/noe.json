@@ -1,0 +1,17 @@
+{
+  "storyId": "noe",
+  "title": "Archa a duha",
+  "subtitle": "Vybarvi klidný obrázek z příběhu o Noem.",
+  "parts": [
+    { "id": "sky", "label": "nebe", "defaultColor": "#dff4ff" },
+    { "id": "sun", "label": "slunce", "defaultColor": "#fff3b0" },
+    { "id": "rainbowRed", "label": "duha", "defaultColor": "#ffd6d6" },
+    { "id": "rainbowYellow", "label": "duha", "defaultColor": "#fff0a8" },
+    { "id": "rainbowGreen", "label": "duha", "defaultColor": "#cdf5d3" },
+    { "id": "water", "label": "voda", "defaultColor": "#c7eaff" },
+    { "id": "grass", "label": "tráva", "defaultColor": "#d8f3dc" },
+    { "id": "ark", "label": "archa", "defaultColor": "#d9b382" },
+    { "id": "roof", "label": "střecha", "defaultColor": "#b97a57" },
+    { "id": "dove", "label": "holubice", "defaultColor": "#ffffff" }
+  ]
+}
