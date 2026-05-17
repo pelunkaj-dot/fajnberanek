@@ -3,12 +3,14 @@ import { renderCards } from "./modules/cards/cards.js";
 import { renderFindScene } from "./modules/find-scene/find-scene.js";
 import { renderPuzzle } from "./modules/puzzle/puzzle.js";
 import { renderCollection } from "./modules/collection/collection.js";
+import { hasUnlockedCard } from "./storage.js";
 
 const screen = document.querySelector("#screen");
 
 const state = {
   stories: [],
-  modules: []
+  modules: [],
+  cardProgress: {}
 };
 
 async function loadJson(path) {
@@ -21,15 +23,52 @@ async function loadJson(path) {
   return response.json();
 }
 
+async function loadCardProgress() {
+  const entries = await Promise.all(
+    state.stories.map(async (story) => {
+      try {
+        const cardSet = await loadJson(`data/cards/${story.id}.json`);
+        const unlocked = cardSet.cards.filter((card) => hasUnlockedCard(card.id)).length;
+
+        return [
+          story.id,
+          {
+            unlocked,
+            total: cardSet.cards.length
+          }
+        ];
+      } catch (error) {
+        console.warn(error);
+
+        return [
+          story.id,
+          {
+            unlocked: 0,
+            total: 0
+          }
+        ];
+      }
+    })
+  );
+
+  state.cardProgress = Object.fromEntries(entries);
+}
+
 async function init() {
   try {
     state.stories = await loadJson("data/stories.json");
     state.modules = await loadJson("data/modules.json");
+    await loadCardProgress();
     renderHome();
   } catch (error) {
     console.error(error);
     renderError();
   }
+}
+
+async function refreshProgressAndRenderHome() {
+  await loadCardProgress();
+  renderHome();
 }
 
 function renderHome() {
@@ -64,7 +103,7 @@ function renderHome() {
     renderCollection({
       screen,
       stories: state.stories,
-      onBack: renderHome,
+      onBack: refreshProgressAndRenderHome,
       onOpenStory: renderStoryDetail
     });
   });
@@ -78,6 +117,11 @@ function renderHome() {
 }
 
 function renderStoryCard(story) {
+  const progress = state.cardProgress[story.id] || { unlocked: 0, total: 0 };
+  const progressLabel = progress.total > 0
+    ? `${progress.unlocked} / ${progress.total} kartičky`
+    : "kartičky čekají";
+
   return `
     <button class="story-card" data-story-id="${story.id}">
       <div class="story-card-top">
@@ -91,6 +135,7 @@ function renderStoryCard(story) {
       <div class="badge-row">
         <span class="badge">věk ${story.age}</span>
         <span class="badge">${story.modules.length} aktivity</span>
+        <span class="badge badge-progress">🌟 ${progressLabel}</span>
       </div>
     </button>
   `;
@@ -129,7 +174,7 @@ function renderStoryDetail(storyId) {
     </section>
   `;
 
-  document.querySelector("#backToHome").addEventListener("click", renderHome);
+  document.querySelector("#backToHome").addEventListener("click", refreshProgressAndRenderHome);
 
   document.querySelectorAll("[data-module-id]").forEach((button) => {
     button.addEventListener("click", () => {
