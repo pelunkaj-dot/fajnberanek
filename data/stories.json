@@ -13,7 +13,7 @@
     "subtitle": "Bouře, veliká ryba a nový začátek",
     "age": "5+",
     "icon": "🐋",
-    "modules": ["mini-stories", "find-scene", "cards"]
+    "modules": ["mini-stories", "find-scene", "puzzle", "cards"]
   },
   {
     "id": "david",
