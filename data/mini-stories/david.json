@@ -1,0 +1,37 @@
+{
+  "storyId": "david",
+  "title": "David, malý pastýř",
+  "rewardCardId": "maly-pastyr",
+  "slides": [
+    {
+      "id": "david-01",
+      "emoji": "🐑",
+      "text": "David byl mladý pastýř a staral se o ovečky."
+    },
+    {
+      "id": "david-02",
+      "emoji": "🌿",
+      "text": "Vodíval stádo na pastviny a dával na ně pozor."
+    },
+    {
+      "id": "david-03",
+      "emoji": "🎵",
+      "text": "David uměl krásně hrát a zpívat Bohu."
+    },
+    {
+      "id": "david-04",
+      "emoji": "🧒",
+      "text": "I když byl mladý, Bůh viděl jeho srdce."
+    },
+    {
+      "id": "david-05",
+      "emoji": "🛡️",
+      "text": "David se učil být odvážný a důvěřovat Bohu."
+    },
+    {
+      "id": "david-06",
+      "emoji": "✨",
+      "text": "Bůh si může použít i malého člověka k dobrým věcem."
+    }
+  ]
+}
