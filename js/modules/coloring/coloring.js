@@ -50,7 +50,7 @@ function renderColoringBoard({ screen, story, coloring, colors, selectedColor, d
       <div class="coloring-card">
         <div class="coloring-top">
           <button class="soft-button coloring-back" id="backToStory">← Zpět</button>
-          <div class="coloring-mode-label">${modeLabel}</div>
+          <div class="coloring-mode-label" id="coloringModeLabel">${modeLabel}</div>
         </div>
 
         <p class="coloring-kicker">${story.title}</p>
@@ -83,21 +83,19 @@ function renderColoringBoard({ screen, story, coloring, colors, selectedColor, d
   `;
 
   const canvas = document.querySelector("#drawingCanvas");
+  const stage = document.querySelector("#coloringStage");
+  const modeLabelNode = document.querySelector("#coloringModeLabel");
+  const toggleDrawButton = document.querySelector("#toggleDrawMode");
   prepareCanvas(canvas);
 
   document.querySelector("#backToStory").addEventListener("click", onBack);
 
   document.querySelectorAll("[data-color]").forEach((button) => {
     button.addEventListener("click", () => {
-      renderColoringBoard({
-        screen,
-        story,
-        coloring,
-        colors,
-        selectedColor: button.dataset.color,
-        drawMode,
-        blankMode,
-        onBack
+      selectedColor = button.dataset.color;
+
+      document.querySelectorAll("[data-color]").forEach((colorButton) => {
+        colorButton.classList.toggle("is-selected", colorButton.dataset.color === selectedColor);
       });
     });
   });
@@ -107,30 +105,35 @@ function renderColoringBoard({ screen, story, coloring, colors, selectedColor, d
       if (drawMode || blankMode) return;
 
       colors[part.dataset.coloringPart] = selectedColor;
+      part.setAttribute("fill", selectedColor);
+      part.setAttribute("stroke", selectedColor);
+    });
+  });
+
+  toggleDrawButton.addEventListener("click", () => {
+    if (blankMode) {
       renderColoringBoard({
         screen,
         story,
         coloring,
         colors,
         selectedColor,
-        drawMode,
-        blankMode,
+        drawMode: false,
+        blankMode: false,
         onBack
       });
-    });
-  });
 
-  document.querySelector("#toggleDrawMode").addEventListener("click", () => {
-    renderColoringBoard({
-      screen,
-      story,
-      coloring,
-      colors,
-      selectedColor,
-      drawMode: blankMode ? false : !drawMode,
-      blankMode: false,
-      onBack
-    });
+      return;
+    }
+
+    drawMode = !drawMode;
+    stage.classList.toggle("is-drawing", drawMode);
+    modeLabelNode.textContent = drawMode ? "Čmárej prstem" : "Vybarvuj plochy";
+    toggleDrawButton.textContent = drawMode ? "Vybarvuj plochy" : "Čmárej prstem";
+
+    if (drawMode) {
+      enableDrawing(canvas, () => selectedColor);
+    }
   });
 
   document.querySelector("#openBlankPaper").addEventListener("click", () => {
@@ -166,7 +169,7 @@ function renderColoringBoard({ screen, story, coloring, colors, selectedColor, d
   });
 
   if (drawMode || blankMode) {
-    enableDrawing(canvas, selectedColor);
+    enableDrawing(canvas, () => selectedColor);
   }
 }
 
@@ -308,7 +311,11 @@ function clearCanvas(canvas) {
   ctx.clearRect(0, 0, canvas.width, canvas.height);
 }
 
-function enableDrawing(canvas, color) {
+function enableDrawing(canvas, getColor) {
+  if (canvas.dataset.drawingEnabled === "true") return;
+
+  canvas.dataset.drawingEnabled = "true";
+
   const ctx = canvas.getContext("2d");
   let drawing = false;
 
@@ -336,7 +343,7 @@ function enableDrawing(canvas, color) {
 
     event.preventDefault();
     const point = getPoint(event);
-    ctx.strokeStyle = color;
+    ctx.strokeStyle = getColor();
     ctx.lineWidth = 7;
     ctx.lineTo(point.x, point.y);
     ctx.stroke();
@@ -352,7 +359,7 @@ function enableDrawing(canvas, color) {
 
   canvas.addEventListener("mousedown", start);
   canvas.addEventListener("mousemove", move);
-  window.addEventListener("mouseup", end, { once: true });
+  window.addEventListener("mouseup", end);
 
   canvas.addEventListener("touchstart", start, { passive: false });
   canvas.addEventListener("touchmove", move, { passive: false });
