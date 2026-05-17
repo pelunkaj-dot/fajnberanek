@@ -6,7 +6,7 @@ import { renderCollection } from "./modules/collection/collection.js";
 import { renderColoring } from "./modules/coloring/coloring.js";
 import { hasUnlockedCard } from "./storage.js";
 
-const APP_VERSION = "23";
+const APP_VERSION = "24";
 const screen = document.querySelector("#screen");
 
 const state = {
@@ -97,6 +97,20 @@ function renderHome() {
         <h2 class="section-title">Biblické příběhy</h2>
         <div class="story-grid">
           ${state.stories.map(renderStoryCard).join("")}
+        </div>
+      </section>
+
+      <section class="brand-footer" aria-label="Informace pro rodiče">
+        <div class="brand-footer-icon" aria-hidden="true">🐑</div>
+        <div>
+          <p class="brand-footer-kicker">Vytvořilo FajnDoučko</p>
+          <h2>FajnBeránek je zdarma</h2>
+          <p>
+            Tichá aplikace pro děti bez reklam a bez registrace.
+          </p>
+          <a class="brand-footer-link" href="https://fajndoucko.cz" target="_blank" rel="noopener noreferrer">
+            Navštívit FajnDoučko.cz
+          </a>
         </div>
       </section>
     </section>
