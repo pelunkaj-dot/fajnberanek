@@ -1,0 +1,14 @@
+{
+  "storyId": "jonas",
+  "title": "Loď a veliká ryba",
+  "subtitle": "Vybarvi moře, loď a velikou rybu z příběhu o Jonášovi.",
+  "parts": [
+    { "id": "sky", "label": "nebe", "defaultColor": "#dff4ff" },
+    { "id": "cloud", "label": "mrak", "defaultColor": "#ffffff" },
+    { "id": "water", "label": "moře", "defaultColor": "#bde7ff" },
+    { "id": "boat", "label": "loď", "defaultColor": "#d9b382" },
+    { "id": "sail", "label": "plachta", "defaultColor": "#fff8e8" },
+    { "id": "fish", "label": "veliká ryba", "defaultColor": "#9bd3f5" },
+    { "id": "waves", "label": "vlny", "defaultColor": "#ffffff" }
+  ]
+}
