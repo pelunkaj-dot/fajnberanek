@@ -1,28 +1,28 @@
-const CACHE_NAME = "fajnberanek-v20";
+const CACHE_NAME = "fajnberanek-v21";
 
 const APP_SHELL = [
   "./",
   "./index.html",
 
-  "./css/base.css?v=20",
-  "./css/layout.css?v=20",
-  "./css/components.css?v=20",
+  "./css/base.css?v=21",
+  "./css/layout.css?v=21",
+  "./css/components.css?v=21",
 
-  "./js/app.js?v=20",
+  "./js/app.js?v=21",
   "./js/storage.js",
   "./js/rewards.js",
   "./js/modules/mini-stories/mini-stories.js",
-  "./js/modules/mini-stories/mini-stories.css?v=20",
+  "./js/modules/mini-stories/mini-stories.css?v=21",
   "./js/modules/cards/cards.js",
-  "./js/modules/cards/cards.css?v=20",
+  "./js/modules/cards/cards.css?v=21",
   "./js/modules/find-scene/find-scene.js",
-  "./js/modules/find-scene/find-scene.css?v=20",
+  "./js/modules/find-scene/find-scene.css?v=21",
   "./js/modules/puzzle/puzzle.js",
-  "./js/modules/puzzle/puzzle.css?v=20",
+  "./js/modules/puzzle/puzzle.css?v=21",
   "./js/modules/collection/collection.js",
-  "./js/modules/collection/collection.css?v=20",
+  "./js/modules/collection/collection.css?v=21",
   "./js/modules/coloring/coloring.js",
-  "./js/modules/coloring/coloring.css?v=20",
+  "./js/modules/coloring/coloring.css?v=21",
 
   "./data/stories.json",
   "./data/modules.json",
@@ -57,7 +57,7 @@ const APP_SHELL = [
   "./data/puzzle/david.json",
   "./data/coloring/david.json",
 
-  "./manifest.webmanifest?v=20"
+  "./manifest.webmanifest?v=21"
 ];
 
 self.addEventListener("install", (event) => {
