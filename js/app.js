@@ -2,6 +2,7 @@ import { renderMiniStory } from "./modules/mini-stories/mini-stories.js";
 import { renderCards } from "./modules/cards/cards.js";
 import { renderFindScene } from "./modules/find-scene/find-scene.js";
 import { renderPuzzle } from "./modules/puzzle/puzzle.js";
+import { renderCollection } from "./modules/collection/collection.js";
 
 const screen = document.querySelector("#screen");
 
@@ -44,6 +45,10 @@ function renderHome() {
         <p>
           Vyber si příběh a pojď objevovat.
         </p>
+
+        <button class="primary-button home-collection-button" id="openCollection">
+          🌟 Moje kartičky
+        </button>
       </div>
 
       <section>
@@ -54,6 +59,15 @@ function renderHome() {
       </section>
     </section>
   `;
+
+  document.querySelector("#openCollection").addEventListener("click", () => {
+    renderCollection({
+      screen,
+      stories: state.stories,
+      onBack: renderHome,
+      onOpenStory: renderStoryDetail
+    });
+  });
 
   document.querySelectorAll("[data-story-id]").forEach((button) => {
     button.addEventListener("click", () => {
