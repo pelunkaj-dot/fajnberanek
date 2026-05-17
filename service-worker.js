@@ -1,4 +1,4 @@
-const CACHE_NAME = "fajnberanek-v15";
+const CACHE_NAME = "fajnberanek-v16";
 
 const APP_SHELL = [
   "./",
@@ -21,6 +21,8 @@ const APP_SHELL = [
   "./js/modules/puzzle/puzzle.css",
   "./js/modules/collection/collection.js",
   "./js/modules/collection/collection.css",
+  "./js/modules/coloring/coloring.js",
+  "./js/modules/coloring/coloring.css",
 
   "./data/stories.json",
   "./data/modules.json",
@@ -29,6 +31,7 @@ const APP_SHELL = [
   "./data/cards/noe.json",
   "./data/find-scene/noe.json",
   "./data/puzzle/noe.json",
+  "./data/coloring/noe.json",
 
   "./data/mini-stories/jonas.json",
   "./data/cards/jonas.json",
