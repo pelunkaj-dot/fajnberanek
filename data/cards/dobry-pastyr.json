@@ -1,0 +1,30 @@
+{
+  "storyId": "dobry-pastyr",
+  "title": "Kartičky z příběhu Dobrý pastýř",
+  "cards": [
+    {
+      "id": "ztracena-ovecka",
+      "title": "Ztracená ovečka",
+      "emoji": "🐑",
+      "description": "Ztracená ovečka připomíná, že i jeden malý člověk je pro Boha důležitý."
+    },
+    {
+      "id": "dobry-pastyr",
+      "title": "Dobrý pastýř",
+      "emoji": "🧡",
+      "description": "Dobrý pastýř se stará, chrání a hledá toho, kdo se ztratil."
+    },
+    {
+      "id": "zelena-pastva",
+      "title": "Zelená pastva",
+      "emoji": "🌿",
+      "description": "Zelená pastva připomíná pokoj, péči a bezpečné místo."
+    },
+    {
+      "id": "navrat-domu",
+      "title": "Návrat domů",
+      "emoji": "🏠",
+      "description": "Návrat domů znamená radost z nalezení a bezpečí u pastýře."
+    }
+  ]
+}
