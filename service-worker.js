@@ -1,28 +1,28 @@
-const CACHE_NAME = "fajnberanek-v19";
+const CACHE_NAME = "fajnberanek-v20";
 
 const APP_SHELL = [
   "./",
   "./index.html",
 
-  "./css/base.css",
-  "./css/layout.css",
-  "./css/components.css",
+  "./css/base.css?v=20",
+  "./css/layout.css?v=20",
+  "./css/components.css?v=20",
 
-  "./js/app.js",
+  "./js/app.js?v=20",
   "./js/storage.js",
   "./js/rewards.js",
   "./js/modules/mini-stories/mini-stories.js",
-  "./js/modules/mini-stories/mini-stories.css",
+  "./js/modules/mini-stories/mini-stories.css?v=20",
   "./js/modules/cards/cards.js",
-  "./js/modules/cards/cards.css",
+  "./js/modules/cards/cards.css?v=20",
   "./js/modules/find-scene/find-scene.js",
-  "./js/modules/find-scene/find-scene.css",
+  "./js/modules/find-scene/find-scene.css?v=20",
   "./js/modules/puzzle/puzzle.js",
-  "./js/modules/puzzle/puzzle.css",
+  "./js/modules/puzzle/puzzle.css?v=20",
   "./js/modules/collection/collection.js",
-  "./js/modules/collection/collection.css",
+  "./js/modules/collection/collection.css?v=20",
   "./js/modules/coloring/coloring.js",
-  "./js/modules/coloring/coloring.css",
+  "./js/modules/coloring/coloring.css?v=20",
 
   "./data/stories.json",
   "./data/modules.json",
@@ -57,7 +57,7 @@ const APP_SHELL = [
   "./data/puzzle/david.json",
   "./data/coloring/david.json",
 
-  "./manifest.webmanifest"
+  "./manifest.webmanifest?v=20"
 ];
 
 self.addEventListener("install", (event) => {
@@ -80,20 +80,46 @@ self.addEventListener("activate", (event) => {
   );
 });
 
+self.addEventListener("message", (event) => {
+  if (event.data?.type === "SKIP_WAITING") {
+    self.skipWaiting();
+  }
+});
+
 self.addEventListener("fetch", (event) => {
   if (event.request.method !== "GET") return;
 
-  event.respondWith(
-    caches.match(event.request).then((cachedResponse) => {
-      if (cachedResponse) return cachedResponse;
+  const url = new URL(event.request.url);
+  const isVersioned = url.searchParams.has("v");
 
-      return fetch(event.request)
-        .then((networkResponse) => networkResponse)
-        .catch(() => {
+  if (isVersioned) {
+    event.respondWith(
+      fetch(event.request, { cache: "no-store" })
+        .then((networkResponse) => {
+          const copy = networkResponse.clone();
+          caches.open(CACHE_NAME).then((cache) => cache.put(event.request, copy));
+          return networkResponse;
+        })
+        .catch(() => caches.match(event.request))
+    );
+    return;
+  }
+
+  event.respondWith(
+    fetch(event.request)
+      .then((networkResponse) => {
+        const copy = networkResponse.clone();
+        caches.open(CACHE_NAME).then((cache) => cache.put(event.request, copy));
+        return networkResponse;
+      })
+      .catch(() => {
+        return caches.match(event.request).then((cachedResponse) => {
+          if (cachedResponse) return cachedResponse;
+
           if (event.request.mode === "navigate") {
             return caches.match("./index.html");
           }
         });
-    })
+      })
   );
 });
