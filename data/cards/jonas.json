@@ -1,0 +1,30 @@
+{
+  "storyId": "jonas",
+  "title": "Kartičky z příběhu Jonáš",
+  "cards": [
+    {
+      "id": "velika-ryba",
+      "title": "Veliká ryba",
+      "emoji": "🐋",
+      "description": "Veliká ryba připomíná, že Bůh může zachránit i tam, kde už člověk neví kudy dál."
+    },
+    {
+      "id": "bouře",
+      "title": "Bouře",
+      "emoji": "🌊",
+      "description": "Bouře na moři Jonášovi ukázala, že před Bohem nejde utéct."
+    },
+    {
+      "id": "modlitba",
+      "title": "Modlitba",
+      "emoji": "🙏",
+      "description": "Jonáš se v břiše ryby modlil a prosil Boha o pomoc."
+    },
+    {
+      "id": "ninive",
+      "title": "Ninive",
+      "emoji": "🏙️",
+      "description": "Ninive bylo město, kam měl Jonáš jít a předat Boží zprávu."
+    }
+  ]
+}
