@@ -1,0 +1,15 @@
+{
+  "storyId": "dobry-pastyr",
+  "title": "Pastýř a ovečka",
+  "subtitle": "Vybarvi dobrého pastýře, ovečku a domov.",
+  "parts": [
+    { "id": "sky", "label": "nebe", "defaultColor": "#dff4ff" },
+    { "id": "sun", "label": "slunce", "defaultColor": "#fff3b0" },
+    { "id": "grass", "label": "tráva", "defaultColor": "#d8f3dc" },
+    { "id": "shepherdFace", "label": "pastýř", "defaultColor": "#f2c39b" },
+    { "id": "robe", "label": "oděv", "defaultColor": "#c4b5fd" },
+    { "id": "staff", "label": "hůl", "defaultColor": "#8b5a2b" },
+    { "id": "sheep", "label": "ovečka", "defaultColor": "#ffffff" },
+    { "id": "home", "label": "domov", "defaultColor": "#f4c27a" }
+  ]
+}
