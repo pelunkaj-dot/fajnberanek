@@ -93,3 +93,8 @@
   font-size: .86rem;
   font-weight: 700;
 }
+
+.badge-progress {
+  background: #fff4d2;
+  color: var(--primary-dark);
+}
