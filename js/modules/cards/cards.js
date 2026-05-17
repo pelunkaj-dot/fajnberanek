@@ -13,6 +13,8 @@ async function loadCards(storyId) {
 export async function renderCards({ screen, story, onBack }) {
   try {
     const cardSet = await loadCards(story.id);
+    const unlockedCount = cardSet.cards.filter((card) => hasUnlockedCard(card.id)).length;
+    const totalCount = cardSet.cards.length;
 
     screen.innerHTML = `
       <section class="cards-screen">
@@ -28,6 +30,10 @@ export async function renderCards({ screen, story, onBack }) {
             <p>
               Sbírej kartičky při objevování příběhu.
             </p>
+
+            <div class="cards-count">
+              <strong>${unlockedCount}</strong> / ${totalCount} kartičky objeveny
+            </div>
           </div>
         </div>
 
