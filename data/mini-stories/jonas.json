@@ -1,0 +1,37 @@
+{
+  "storyId": "jonas",
+  "title": "Jonáš a veliká ryba",
+  "rewardCardId": "velika-ryba",
+  "slides": [
+    {
+      "id": "jonas-01",
+      "emoji": "📣",
+      "text": "Bůh poslal Jonáše do města Ninive."
+    },
+    {
+      "id": "jonas-02",
+      "emoji": "🏃",
+      "text": "Jonáš se ale bál a vydal se opačným směrem."
+    },
+    {
+      "id": "jonas-03",
+      "emoji": "⛵",
+      "text": "Nastoupil na loď a chtěl odplout daleko pryč."
+    },
+    {
+      "id": "jonas-04",
+      "emoji": "🌊",
+      "text": "Na moři přišla veliká bouře."
+    },
+    {
+      "id": "jonas-05",
+      "emoji": "🐋",
+      "text": "Veliká ryba Jonáše zachránila a nesla ho v hlubině."
+    },
+    {
+      "id": "jonas-06",
+      "emoji": "🙏",
+      "text": "Jonáš se modlil a Bůh mu dal nový začátek."
+    }
+  ]
+}
