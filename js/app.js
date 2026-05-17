@@ -6,7 +6,7 @@ import { renderCollection } from "./modules/collection/collection.js";
 import { renderColoring } from "./modules/coloring/coloring.js";
 import { hasUnlockedCard } from "./storage.js";
 
-const APP_VERSION = "22";
+const APP_VERSION = "23";
 const screen = document.querySelector("#screen");
 
 const state = {
