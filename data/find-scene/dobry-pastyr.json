@@ -8,16 +8,16 @@
       "id": "ovecka",
       "label": "ovečka",
       "emoji": "🐑",
-      "x": 30,
-      "y": 66,
+      "x": 28,
+      "y": 68,
       "size": "large"
     },
     {
       "id": "pastyr",
-      "label": "dobrý pastýř",
-      "emoji": "🧡",
+      "label": "pastýř",
+      "emoji": "🧑‍🌾",
       "x": 54,
-      "y": 48,
+      "y": 52,
       "size": "large"
     },
     {
@@ -25,23 +25,23 @@
       "label": "zelená pastva",
       "emoji": "🌿",
       "x": 70,
-      "y": 76,
+      "y": 78,
       "size": "medium"
     },
     {
       "id": "dum",
       "label": "domov",
       "emoji": "🏠",
-      "x": 82,
-      "y": 42,
+      "x": 86,
+      "y": 36,
       "size": "medium"
     },
     {
       "id": "voda",
       "label": "voda",
       "emoji": "💧",
-      "x": 18,
-      "y": 78,
+      "x": 16,
+      "y": 82,
       "size": "small"
     },
     {
@@ -56,8 +56,8 @@
       "id": "slunce",
       "label": "slunce",
       "emoji": "☀️",
-      "x": 74,
-      "y": 18,
+      "x": 72,
+      "y": 16,
       "size": "small"
     }
   ],
@@ -70,7 +70,7 @@
     {
       "id": "task-02",
       "targetId": "pastyr",
-      "instruction": "Najdi dobrého pastýře."
+      "instruction": "Najdi pastýře."
     },
     {
       "id": "task-03",
