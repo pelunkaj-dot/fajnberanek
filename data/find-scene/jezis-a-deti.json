@@ -1,0 +1,86 @@
+{
+  "storyId": "jezis-a-deti",
+  "title": "Hledej u Ježíše",
+  "rewardCardId": "pozehnani",
+  "intro": "Najdi věci z příběhu o Ježíši a dětech.",
+  "scene": [
+    {
+      "id": "jezis",
+      "label": "Ježíš",
+      "emoji": "✨",
+      "x": 50,
+      "y": 44,
+      "size": "large"
+    },
+    {
+      "id": "dite",
+      "label": "dítě",
+      "emoji": "🧒",
+      "x": 28,
+      "y": 62,
+      "size": "large"
+    },
+    {
+      "id": "pozehnani",
+      "label": "požehnání",
+      "emoji": "🤲",
+      "x": 68,
+      "y": 62,
+      "size": "large"
+    },
+    {
+      "id": "srdce",
+      "label": "láska",
+      "emoji": "🧡",
+      "x": 50,
+      "y": 22,
+      "size": "medium"
+    },
+    {
+      "id": "rodina",
+      "label": "rodina",
+      "emoji": "👨‍👩‍👧",
+      "x": 18,
+      "y": 38,
+      "size": "medium"
+    },
+    {
+      "id": "kvetina",
+      "label": "květina",
+      "emoji": "🌼",
+      "x": 82,
+      "y": 78,
+      "size": "small"
+    },
+    {
+      "id": "slunce",
+      "label": "slunce",
+      "emoji": "☀️",
+      "x": 80,
+      "y": 18,
+      "size": "small"
+    }
+  ],
+  "tasks": [
+    {
+      "id": "task-01",
+      "targetId": "dite",
+      "instruction": "Najdi dítě."
+    },
+    {
+      "id": "task-02",
+      "targetId": "jezis",
+      "instruction": "Najdi Ježíše."
+    },
+    {
+      "id": "task-03",
+      "targetId": "pozehnani",
+      "instruction": "Najdi požehnání."
+    },
+    {
+      "id": "task-04",
+      "targetId": "srdce",
+      "instruction": "Najdi lásku."
+    }
+  ]
+}
