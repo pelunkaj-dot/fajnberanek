@@ -1,0 +1,32 @@
+[
+  {
+    "id": "mini-stories",
+    "title": "Mini příběhy",
+    "description": "Krátké biblické příběhy v jemných krocích.",
+    "icon": "📖"
+  },
+  {
+    "id": "coloring",
+    "title": "Omalovánky",
+    "description": "Tiché vybarvování obrázků z příběhu.",
+    "icon": "🎨"
+  },
+  {
+    "id": "find-scene",
+    "title": "Hledej v obrázku",
+    "description": "Najdi postavy, zvířata a drobné detaily.",
+    "icon": "🔎"
+  },
+  {
+    "id": "puzzle",
+    "title": "Puzzle",
+    "description": "Skládej klidné obrázky z biblických scén.",
+    "icon": "🧩"
+  },
+  {
+    "id": "cards",
+    "title": "Kartičky",
+    "description": "Sbírej krásné kartičky z biblických příběhů.",
+    "icon": "🌟"
+  }
+]
