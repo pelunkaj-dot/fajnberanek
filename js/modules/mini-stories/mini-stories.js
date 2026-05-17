@@ -1,3 +1,5 @@
+import { completeMiniStory, unlockCard, hasUnlockedCard } from "../../storage.js";
+
 async function loadMiniStory(storyId) {
   const response = await fetch(`data/mini-stories/${storyId}.json`);
 
@@ -11,6 +13,7 @@ async function loadMiniStory(storyId) {
 export async function renderMiniStory({ screen, story, onBack }) {
   try {
     const miniStory = await loadMiniStory(story.id);
+
     renderSlide({
       screen,
       story,
@@ -20,7 +23,13 @@ export async function renderMiniStory({ screen, story, onBack }) {
     });
   } catch (error) {
     console.error(error);
-    renderMiniStoryMissing({ screen, story, onBack, message: error.message });
+
+    renderMiniStoryMissing({
+      screen,
+      story,
+      onBack,
+      message: error.message
+    });
   }
 }
 
@@ -28,6 +37,7 @@ function renderSlide({ screen, story, miniStory, slideIndex, onBack }) {
   const slide = miniStory.slides[slideIndex];
   const isFirst = slideIndex === 0;
   const isLast = slideIndex === miniStory.slides.length - 1;
+  const progressPercent = Math.round(((slideIndex + 1) / miniStory.slides.length) * 100);
 
   screen.innerHTML = `
     <section class="mini-story-screen">
@@ -42,9 +52,17 @@ function renderSlide({ screen, story, miniStory, slideIndex, onBack }) {
           </div>
         </div>
 
+        <div class="mini-story-progressbar" aria-hidden="true">
+          <div style="width: ${progressPercent}%"></div>
+        </div>
+
         <div class="mini-story-emoji" aria-hidden="true">
           ${slide.emoji}
         </div>
+
+        <p class="mini-story-kicker">
+          ${story.title}
+        </p>
 
         <h1>${miniStory.title}</h1>
 
@@ -81,7 +99,19 @@ function renderSlide({ screen, story, miniStory, slideIndex, onBack }) {
 
   document.querySelector("#nextSlide").addEventListener("click", () => {
     if (isLast) {
-      renderMiniStoryDone({ screen, story, miniStory, onBack });
+      completeMiniStory(story.id);
+
+      if (miniStory.rewardCardId) {
+        unlockCard(miniStory.rewardCardId);
+      }
+
+      renderMiniStoryDone({
+        screen,
+        story,
+        miniStory,
+        onBack
+      });
+
       return;
     }
 
@@ -96,12 +126,20 @@ function renderSlide({ screen, story, miniStory, slideIndex, onBack }) {
 }
 
 function renderMiniStoryDone({ screen, story, miniStory, onBack }) {
+  const cardAlreadyUnlocked = miniStory.rewardCardId
+    ? hasUnlockedCard(miniStory.rewardCardId)
+    : false;
+
   screen.innerHTML = `
     <section class="mini-story-screen">
-      <div class="mini-story-card">
-        <div class="mini-story-emoji" aria-hidden="true">
+      <div class="mini-story-card mini-story-done">
+        <div class="mini-story-emoji mini-story-reward" aria-hidden="true">
           🌈
         </div>
+
+        <p class="mini-story-kicker">
+          Příběh dokončen
+        </p>
 
         <h1>Hotovo</h1>
 
@@ -109,9 +147,17 @@ function renderMiniStoryDone({ screen, story, miniStory, onBack }) {
           Došel jsi až na konec příběhu <strong>${miniStory.title}</strong>.
         </p>
 
-        <p class="mini-story-note">
-          Získáváš kartičku: <strong>Duha naděje</strong>.
-        </p>
+        <div class="reward-card">
+          <div class="reward-card-icon" aria-hidden="true">🌈</div>
+          <div>
+            <h2>Duha naděje</h2>
+            <p>
+              ${cardAlreadyUnlocked
+                ? "Tahle kartička už je uložená ve tvé sbírce."
+                : "Získáváš novou kartičku do sbírky."}
+            </p>
+          </div>
+        </div>
 
         <div class="mini-story-controls mini-story-controls-single">
           <button class="primary-button" id="backToStory">
