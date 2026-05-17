@@ -29,7 +29,7 @@
     "subtitle": "Péče, bezpečí a radost z nalezení",
     "age": "4+",
     "icon": "🐑",
-    "modules": ["mini-stories", "coloring", "find-scene", "cards"]
+    "modules": ["mini-stories", "find-scene", "puzzle", "cards"]
   },
   {
     "id": "jezis-a-deti",
