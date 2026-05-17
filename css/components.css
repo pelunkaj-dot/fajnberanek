@@ -17,7 +17,8 @@
 
 .primary-button:active,
 .soft-button:active,
-.story-card:active {
+.story-card:active,
+.brand-footer-link:active {
   transform: scale(.98);
 }
 
@@ -97,4 +98,77 @@
 .badge-progress {
   background: #fff4d2;
   color: var(--primary-dark);
+}
+
+.brand-footer {
+  width: 100%;
+  max-width: var(--max-width);
+  display: grid;
+  grid-template-columns: 62px 1fr;
+  gap: 14px;
+  align-items: center;
+  margin: 22px auto 0;
+  padding: 16px;
+  border-radius: var(--radius-lg);
+  background: rgba(255,255,255,.76);
+  box-shadow: 0 12px 30px rgba(80, 60, 30, 0.08);
+}
+
+.brand-footer-icon {
+  width: 62px;
+  height: 62px;
+  display: grid;
+  place-items: center;
+  border-radius: 22px;
+  background: #fff2cf;
+  font-size: 32px;
+}
+
+.brand-footer-kicker {
+  margin: 0 0 4px;
+  color: var(--primary-dark);
+  font-weight: 900;
+  letter-spacing: .08em;
+  text-transform: uppercase;
+  font-size: .72rem;
+}
+
+.brand-footer h2 {
+  margin: 0;
+  font-size: 1.2rem;
+}
+
+.brand-footer p {
+  margin: 6px 0 0;
+  color: var(--muted);
+  line-height: 1.35;
+}
+
+.brand-footer-link {
+  display: inline-flex;
+  align-items: center;
+  width: fit-content;
+  min-height: 40px;
+  margin-top: 10px;
+  padding: 0 14px;
+  border-radius: 999px;
+  background: var(--primary);
+  color: white;
+  font-weight: 800;
+  text-decoration: none;
+  box-shadow: 0 10px 24px rgba(79, 157, 120, .2);
+  transition: transform .16s ease, box-shadow .16s ease;
+}
+
+@media (max-width: 420px) {
+  .brand-footer {
+    grid-template-columns: 1fr;
+    text-align: center;
+  }
+
+  .brand-footer-icon,
+  .brand-footer-link {
+    margin-left: auto;
+    margin-right: auto;
+  }
 }
