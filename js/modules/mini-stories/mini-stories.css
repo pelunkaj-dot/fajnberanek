@@ -14,12 +14,25 @@
   justify-content: center;
   background:
     radial-gradient(circle at 50% 0%, rgba(255, 255, 255, .95), transparent 42%),
-    rgba(255, 255, 255, .82);
+    linear-gradient(180deg, rgba(255,255,255,.92), rgba(255,250,241,.84));
   border: 1px solid rgba(255, 255, 255, .9);
   border-radius: var(--radius-xl);
   box-shadow: var(--shadow-soft);
   padding: 20px;
   text-align: center;
+  animation: miniStoryIn .22s ease-out;
+}
+
+@keyframes miniStoryIn {
+  from {
+    opacity: 0;
+    transform: translateY(8px) scale(.99);
+  }
+
+  to {
+    opacity: 1;
+    transform: translateY(0) scale(1);
+  }
 }
 
 .mini-story-top {
@@ -27,7 +40,7 @@
   align-items: center;
   justify-content: space-between;
   gap: 12px;
-  margin-bottom: auto;
+  margin-bottom: 14px;
 }
 
 .mini-story-back {
@@ -47,16 +60,49 @@
   font-size: .9rem;
 }
 
+.mini-story-progressbar {
+  height: 10px;
+  overflow: hidden;
+  border-radius: 999px;
+  background: #f0e5d2;
+}
+
+.mini-story-progressbar div {
+  height: 100%;
+  border-radius: inherit;
+  background: linear-gradient(90deg, var(--primary), var(--accent));
+  transition: width .24s ease;
+}
+
 .mini-story-emoji {
-  width: 128px;
-  height: 128px;
+  width: 132px;
+  height: 132px;
   display: grid;
   place-items: center;
-  margin: 26px auto 18px;
-  border-radius: 36px;
-  background: #fff4d2;
-  font-size: 72px;
-  box-shadow: inset 0 0 0 5px rgba(242, 200, 121, .22);
+  margin: 30px auto 18px;
+  border-radius: 38px;
+  background:
+    radial-gradient(circle at 35% 25%, rgba(255,255,255,.8), transparent 34%),
+    #fff4d2;
+  font-size: 74px;
+  box-shadow:
+    inset 0 0 0 5px rgba(242, 200, 121, .22),
+    0 16px 34px rgba(126, 91, 34, .12);
+}
+
+.mini-story-reward {
+  background:
+    radial-gradient(circle at 35% 25%, rgba(255,255,255,.9), transparent 34%),
+    linear-gradient(135deg, #ffe8a8, #d8f3dc);
+}
+
+.mini-story-kicker {
+  margin: 0 auto 8px;
+  color: var(--primary-dark);
+  font-weight: 900;
+  letter-spacing: .08em;
+  text-transform: uppercase;
+  font-size: .78rem;
 }
 
 .mini-story-card h1 {
@@ -98,6 +144,42 @@
 .mini-story-controls button:disabled {
   opacity: .45;
   cursor: not-allowed;
+}
+
+.reward-card {
+  width: 100%;
+  max-width: 460px;
+  display: grid;
+  grid-template-columns: 82px 1fr;
+  align-items: center;
+  gap: 14px;
+  margin: 24px auto 0;
+  padding: 14px;
+  border-radius: 24px;
+  background: #fff5dc;
+  box-shadow: inset 0 0 0 1px rgba(126, 91, 34, .08);
+  text-align: left;
+}
+
+.reward-card-icon {
+  width: 82px;
+  height: 82px;
+  display: grid;
+  place-items: center;
+  border-radius: 22px;
+  background: white;
+  font-size: 46px;
+}
+
+.reward-card h2 {
+  margin: 0;
+  font-size: 1.2rem;
+}
+
+.reward-card p {
+  margin: 4px 0 0;
+  color: var(--muted);
+  line-height: 1.35;
 }
 
 @media (min-width: 720px) {
