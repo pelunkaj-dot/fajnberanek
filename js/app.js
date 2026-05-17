@@ -3,6 +3,7 @@ import { renderCards } from "./modules/cards/cards.js";
 import { renderFindScene } from "./modules/find-scene/find-scene.js";
 import { renderPuzzle } from "./modules/puzzle/puzzle.js";
 import { renderCollection } from "./modules/collection/collection.js";
+import { renderColoring } from "./modules/coloring/coloring.js";
 import { hasUnlockedCard } from "./storage.js";
 
 const screen = document.querySelector("#screen");
@@ -200,6 +201,16 @@ function renderModuleCard(module) {
 async function openModule(story, moduleId) {
   if (moduleId === "mini-stories") {
     await renderMiniStory({
+      screen,
+      story,
+      onBack: () => renderStoryDetail(story.id)
+    });
+
+    return;
+  }
+
+  if (moduleId === "coloring") {
+    await renderColoring({
       screen,
       story,
       onBack: () => renderStoryDetail(story.id)
