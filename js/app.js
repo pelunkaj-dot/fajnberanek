@@ -7,9 +7,11 @@ const state = {
 
 async function loadJson(path) {
   const response = await fetch(path);
+
   if (!response.ok) {
     throw new Error(`Nepodařilo se načíst: ${path}`);
   }
+
   return response.json();
 }
 
@@ -66,6 +68,7 @@ function renderStoryCard(story) {
           <p>${story.subtitle}</p>
         </div>
       </div>
+
       <div class="badge-row">
         <span class="badge">věk ${story.age}</span>
         <span class="badge">${story.modules.length} aktivity</span>
@@ -92,7 +95,10 @@ function renderStoryDetail(storyId) {
         <div class="hero-mark" aria-hidden="true">${story.icon}</div>
         <h1>${story.title}</h1>
         <p>${story.subtitle}</p>
-        <button class="soft-button" id="backToHome">← Zpět na příběhy</button>
+
+        <button class="soft-button" id="backToHome">
+          ← Zpět na příběhy
+        </button>
       </div>
 
       <section>
@@ -135,12 +141,15 @@ function renderModulePlaceholder(story, moduleId) {
       <div class="hero">
         <div class="hero-mark" aria-hidden="true">${module?.icon || "✨"}</div>
         <h1>${module?.title || "Aktivita"}</h1>
+
         <p>
           Příběh: <strong>${story.title}</strong>
         </p>
+
         <p>
           Tady brzy postavíme první skutečný modul.
         </p>
+
         <button class="primary-button" id="backToStory">
           Zpět k příběhu
         </button>
@@ -160,6 +169,7 @@ function renderError(message = "Něco se nepodařilo načíst.") {
         <div class="hero-mark" aria-hidden="true">🌧️</div>
         <h1>Jejda</h1>
         <p>${message}</p>
+
         <button class="primary-button" onclick="location.reload()">
           Zkusit znovu
         </button>
@@ -169,3 +179,13 @@ function renderError(message = "Něco se nepodařilo načíst.") {
 }
 
 init();
+
+if ("serviceWorker" in navigator) {
+  window.addEventListener("load", () => {
+    navigator.serviceWorker
+      .register("./service-worker.js")
+      .catch((error) => {
+        console.warn("Service worker se nepodařilo zaregistrovat:", error);
+      });
+  });
+}
