@@ -5,7 +5,8 @@
 }
 
 .collection-header,
-.collection-groups {
+.collection-groups,
+.collection-tools {
   width: 100%;
   max-width: var(--max-width);
   margin: 0 auto;
@@ -25,7 +26,8 @@
 
 .collection-title-block,
 .collection-group,
-.collection-empty {
+.collection-empty,
+.collection-tools {
   background:
     radial-gradient(circle at 50% 0%, rgba(255, 255, 255, .95), transparent 42%),
     linear-gradient(180deg, rgba(255,255,255,.92), rgba(255,250,241,.84));
@@ -180,6 +182,32 @@
   color: #978b78;
 }
 
+.collection-tools {
+  margin-top: 18px;
+  padding: 16px;
+  text-align: center;
+}
+
+.collection-tools p {
+  margin: 0 0 10px;
+  color: var(--muted);
+  font-size: .95rem;
+  font-weight: 700;
+}
+
+.collection-reset-button {
+  background: #f3eadb;
+}
+
+.collection-reset-actions {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 12px;
+  width: 100%;
+  max-width: 420px;
+  margin: 22px auto 0;
+}
+
 .collection-empty {
   width: 100%;
   max-width: 620px;
@@ -197,7 +225,8 @@
     padding: 28px;
   }
 
-  .collection-group {
+  .collection-group,
+  .collection-tools {
     padding: 20px;
   }
 
@@ -212,5 +241,9 @@
 
   .collection-card-grid {
     grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+
+  .collection-reset-actions {
+    grid-template-columns: 1fr 1fr;
   }
 }
