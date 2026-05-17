@@ -1,4 +1,4 @@
-import { hasUnlockedCard } from "../../storage.js";
+import { hasUnlockedCard, resetProgress } from "../../storage.js";
 
 async function loadJson(path) {
   const response = await fetch(path);
@@ -56,6 +56,13 @@ export async function renderCollection({ screen, stories, onBack, onOpenStory })
         <div class="collection-groups">
           ${groups.map(renderStoryGroup).join("")}
         </div>
+
+        <div class="collection-tools">
+          <p>Testování a správa pokroku</p>
+          <button class="soft-button collection-reset-button" id="showResetConfirm">
+            Vymazat pokrok
+          </button>
+        </div>
       </section>
     `;
 
@@ -65,6 +72,10 @@ export async function renderCollection({ screen, stories, onBack, onOpenStory })
       button.addEventListener("click", () => {
         onOpenStory(button.dataset.openStory);
       });
+    });
+
+    document.querySelector("#showResetConfirm").addEventListener("click", () => {
+      renderResetConfirm({ screen, stories, onBack, onOpenStory });
     });
   } catch (error) {
     console.error(error);
@@ -112,6 +123,35 @@ function renderCollectionCard(card) {
       </div>
     </article>
   `;
+}
+
+function renderResetConfirm({ screen, stories, onBack, onOpenStory }) {
+  screen.innerHTML = `
+    <section class="collection-screen">
+      <div class="collection-empty">
+        <div class="collection-mark" aria-hidden="true">🧹</div>
+        <p class="collection-kicker">Testování</p>
+        <h1>Vymazat pokrok?</h1>
+        <p>
+          Tím se zamknou všechny kartičky a aplikace začne znovu od začátku.
+        </p>
+
+        <div class="collection-reset-actions">
+          <button class="soft-button" id="cancelReset">Nechat pokrok</button>
+          <button class="primary-button" id="confirmReset">Vymazat</button>
+        </div>
+      </div>
+    </section>
+  `;
+
+  document.querySelector("#cancelReset").addEventListener("click", () => {
+    renderCollection({ screen, stories, onBack, onOpenStory });
+  });
+
+  document.querySelector("#confirmReset").addEventListener("click", () => {
+    resetProgress();
+    renderCollection({ screen, stories, onBack, onOpenStory });
+  });
 }
 
 function renderCollectionError({ screen, onBack }) {
