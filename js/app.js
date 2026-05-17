@@ -1,6 +1,7 @@
 import { renderMiniStory } from "./modules/mini-stories/mini-stories.js";
 import { renderCards } from "./modules/cards/cards.js";
 import { renderFindScene } from "./modules/find-scene/find-scene.js";
+import { renderPuzzle } from "./modules/puzzle/puzzle.js";
 
 const screen = document.querySelector("#screen");
 
@@ -150,6 +151,16 @@ async function openModule(story, moduleId) {
 
   if (moduleId === "find-scene") {
     await renderFindScene({
+      screen,
+      story,
+      onBack: () => renderStoryDetail(story.id)
+    });
+
+    return;
+  }
+
+  if (moduleId === "puzzle") {
+    await renderPuzzle({
       screen,
       story,
       onBack: () => renderStoryDetail(story.id)
