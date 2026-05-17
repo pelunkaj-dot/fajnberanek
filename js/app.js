@@ -1,4 +1,5 @@
 import { renderMiniStory } from "./modules/mini-stories/mini-stories.js";
+import { renderCards } from "./modules/cards/cards.js";
 
 const screen = document.querySelector("#screen");
 
@@ -145,6 +146,19 @@ async function openModule(story, moduleId) {
 
     return;
   }
+
+  if (moduleId === "cards") {
+    await renderCards({
+      screen,
+      story,
+      onBack: () => renderStoryDetail(story.id)
+    });
+
+    return;
+  }
+
+  renderModulePlaceholder(story, moduleId);
+}
 
   renderModulePlaceholder(story, moduleId);
 }
