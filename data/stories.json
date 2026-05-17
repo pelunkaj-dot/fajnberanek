@@ -5,7 +5,7 @@
     "subtitle": "Archa, zvířata a duha",
     "age": "4+",
     "icon": "🌈",
-    "modules": ["mini-stories", "find-scene", "puzzle", "cards"]
+    "modules": ["mini-stories", "coloring", "find-scene", "puzzle", "cards"]
   },
   {
     "id": "jonas",
