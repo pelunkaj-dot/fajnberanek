@@ -1,0 +1,37 @@
+{
+  "storyId": "noe",
+  "title": "Noe a archa",
+  "rewardCardId": "duha",
+  "slides": [
+    {
+      "id": "noe-01",
+      "emoji": "🌧️",
+      "text": "Lidé na zemi často zapomínali na dobro."
+    },
+    {
+      "id": "noe-02",
+      "emoji": "🪚",
+      "text": "Noe ale poslouchal Boha a důvěřoval mu."
+    },
+    {
+      "id": "noe-03",
+      "emoji": "⛵",
+      "text": "Bůh řekl Noemu, aby postavil velikou archu."
+    },
+    {
+      "id": "noe-04",
+      "emoji": "🐘",
+      "text": "Do archy přišla zvířata a Noemova rodina."
+    },
+    {
+      "id": "noe-05",
+      "emoji": "🕊️",
+      "text": "Po mnoha dnech se objevila suchá země."
+    },
+    {
+      "id": "noe-06",
+      "emoji": "🌈",
+      "text": "Na obloze se ukázala duha jako znamení naděje."
+    }
+  ]
+}
