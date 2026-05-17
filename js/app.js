@@ -6,7 +6,7 @@ import { renderCollection } from "./modules/collection/collection.js";
 import { renderColoring } from "./modules/coloring/coloring.js";
 import { hasUnlockedCard } from "./storage.js";
 
-const APP_VERSION = "21";
+const APP_VERSION = "22";
 const screen = document.querySelector("#screen");
 
 const state = {
@@ -215,6 +215,7 @@ async function openModule(story, moduleId) {
     await renderColoring({
       screen,
       story,
+      stories: state.stories,
       onBack: () => renderStoryDetail(story.id)
     });
 
