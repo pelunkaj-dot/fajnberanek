@@ -1,0 +1,86 @@
+{
+  "storyId": "dobry-pastyr",
+  "title": "Hledej na pastvině",
+  "rewardCardId": "dobry-pastyr",
+  "intro": "Najdi věci z příběhu o dobrém pastýři.",
+  "scene": [
+    {
+      "id": "ovecka",
+      "label": "ovečka",
+      "emoji": "🐑",
+      "x": 30,
+      "y": 66,
+      "size": "large"
+    },
+    {
+      "id": "pastyr",
+      "label": "dobrý pastýř",
+      "emoji": "🧡",
+      "x": 54,
+      "y": 48,
+      "size": "large"
+    },
+    {
+      "id": "pastva",
+      "label": "zelená pastva",
+      "emoji": "🌿",
+      "x": 70,
+      "y": 76,
+      "size": "medium"
+    },
+    {
+      "id": "dum",
+      "label": "domov",
+      "emoji": "🏠",
+      "x": 82,
+      "y": 42,
+      "size": "medium"
+    },
+    {
+      "id": "voda",
+      "label": "voda",
+      "emoji": "💧",
+      "x": 18,
+      "y": 78,
+      "size": "small"
+    },
+    {
+      "id": "strom",
+      "label": "strom",
+      "emoji": "🌳",
+      "x": 18,
+      "y": 38,
+      "size": "medium"
+    },
+    {
+      "id": "slunce",
+      "label": "slunce",
+      "emoji": "☀️",
+      "x": 74,
+      "y": 18,
+      "size": "small"
+    }
+  ],
+  "tasks": [
+    {
+      "id": "task-01",
+      "targetId": "ovecka",
+      "instruction": "Najdi ovečku."
+    },
+    {
+      "id": "task-02",
+      "targetId": "pastyr",
+      "instruction": "Najdi dobrého pastýře."
+    },
+    {
+      "id": "task-03",
+      "targetId": "pastva",
+      "instruction": "Najdi zelenou pastvu."
+    },
+    {
+      "id": "task-04",
+      "targetId": "dum",
+      "instruction": "Najdi domov."
+    }
+  ]
+}
