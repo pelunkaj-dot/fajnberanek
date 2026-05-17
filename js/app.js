@@ -148,6 +148,16 @@ async function openModule(story, moduleId) {
     return;
   }
 
+  if (moduleId === "find-scene") {
+    await renderFindScene({
+      screen,
+      story,
+      onBack: () => renderStoryDetail(story.id)
+    });
+
+    return;
+  }
+
   if (moduleId === "cards") {
     await renderCards({
       screen,
