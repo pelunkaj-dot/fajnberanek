@@ -9,11 +9,15 @@ async function loadColoring(storyId) {
 }
 
 const palette = [
+  "#000000",
   "#ef4444",
+  "#fca5a5",
   "#f97316",
   "#facc15",
   "#22c55e",
+  "#86efac",
   "#38bdf8",
+  "#dff4ff",
   "#6366f1",
   "#a855f7",
   "#ec4899",
