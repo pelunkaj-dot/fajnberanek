@@ -1,0 +1,19 @@
+{
+  "storyId": "david",
+  "title": "Poskládej Davida",
+  "intro": "Poskládej klidný obrázek z příběhu o Davidovi.",
+  "rewardCardId": "odvaha",
+  "rewardTitle": "Odvaha",
+  "rewardEmoji": "🛡️",
+  "tiles": [
+    { "id": "t1", "emoji": "☀️", "label": "slunce" },
+    { "id": "t2", "emoji": "🌳", "label": "strom" },
+    { "id": "t3", "emoji": "☁️", "label": "mrak" },
+    { "id": "t4", "emoji": "🐑", "label": "ovečka" },
+    { "id": "t5", "emoji": "🧒", "label": "David" },
+    { "id": "t6", "emoji": "🎵", "label": "harfa" },
+    { "id": "t7", "emoji": "🌿", "label": "pastvina" },
+    { "id": "t8", "emoji": "🛡️", "label": "odvaha" },
+    { "id": "t9", "emoji": "✨", "label": "důvěra" }
+  ]
+}
