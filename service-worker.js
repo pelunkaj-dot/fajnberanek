@@ -1,4 +1,4 @@
-const CACHE_NAME = "fajnberanek-v4";
+const CACHE_NAME = "fajnberanek-v5";
 
 const APP_SHELL = [
   "./",
@@ -9,9 +9,22 @@ const APP_SHELL = [
   "./css/components.css",
 
   "./js/app.js",
+  "./js/storage.js",
+  "./js/modules/mini-stories/mini-stories.js",
+  "./js/modules/mini-stories/mini-stories.css",
+  "./js/modules/cards/cards.js",
+  "./js/modules/cards/cards.css",
+  "./js/modules/find-scene/find-scene.js",
+  "./js/modules/find-scene/find-scene.css",
+  "./js/modules/puzzle/puzzle.js",
+  "./js/modules/puzzle/puzzle.css",
 
   "./data/stories.json",
   "./data/modules.json",
+  "./data/mini-stories/noe.json",
+  "./data/cards/noe.json",
+  "./data/find-scene/noe.json",
+  "./data/puzzle/noe.json",
 
   "./manifest.webmanifest"
 ];
@@ -44,9 +57,7 @@ self.addEventListener("fetch", (event) => {
       if (cachedResponse) return cachedResponse;
 
       return fetch(event.request)
-        .then((networkResponse) => {
-          return networkResponse;
-        })
+        .then((networkResponse) => networkResponse)
         .catch(() => {
           if (event.request.mode === "navigate") {
             return caches.match("./index.html");
