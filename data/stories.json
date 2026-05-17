@@ -1,0 +1,42 @@
+[
+  {
+    "id": "noe",
+    "title": "Noe",
+    "subtitle": "Archa, zvířata a duha",
+    "age": "4+",
+    "icon": "🌈",
+    "modules": ["mini-stories", "find-scene", "puzzle", "cards"]
+  },
+  {
+    "id": "jonas",
+    "title": "Jonáš",
+    "subtitle": "Bouře, veliká ryba a nový začátek",
+    "age": "5+",
+    "icon": "🐋",
+    "modules": ["mini-stories", "find-scene", "cards"]
+  },
+  {
+    "id": "david",
+    "title": "David",
+    "subtitle": "Pastýř, odvaha a důvěra",
+    "age": "6+",
+    "icon": "🎵",
+    "modules": ["mini-stories", "puzzle", "cards"]
+  },
+  {
+    "id": "dobry-pastyr",
+    "title": "Dobrý pastýř",
+    "subtitle": "Péče, bezpečí a radost z nalezení",
+    "age": "4+",
+    "icon": "🐑",
+    "modules": ["mini-stories", "coloring", "find-scene", "cards"]
+  },
+  {
+    "id": "jezis-a-deti",
+    "title": "Ježíš a děti",
+    "subtitle": "Ježíš má děti rád",
+    "age": "4+",
+    "icon": "✨",
+    "modules": ["mini-stories", "coloring", "find-scene", "cards"]
+  }
+]
