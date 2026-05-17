@@ -138,7 +138,7 @@
 
 .coloring-tools {
   display: grid;
-  gap: 10px;
+  gap: 8px;
   margin-top: auto;
 }
 
@@ -146,20 +146,33 @@
   display: flex;
   flex-wrap: wrap;
   justify-content: center;
-  gap: 9px;
+  gap: 6px;
 }
 
 .coloring-color {
-  width: 46px;
-  height: 46px;
-  border: 4px solid rgba(255,255,255,.95);
+  width: 31px;
+  height: 31px;
+  border: 3px solid rgba(255,255,255,.95);
   border-radius: 999px;
-  box-shadow: 0 8px 18px rgba(80,60,30,.12);
+  box-shadow: 0 6px 14px rgba(80,60,30,.12);
   cursor: pointer;
 }
 
+.coloring-color[data-color="#ffffff"] {
+  box-shadow:
+    inset 0 0 0 1px rgba(80,60,30,.25),
+    0 6px 14px rgba(80,60,30,.12);
+}
+
+.coloring-color[data-color="#000000"] {
+  border-color: rgba(255,255,255,1);
+  box-shadow:
+    inset 0 0 0 1px rgba(255,255,255,.35),
+    0 6px 14px rgba(80,60,30,.18);
+}
+
 .coloring-color.is-selected {
-  outline: 4px solid rgba(79, 157, 120, .36);
+  outline: 3px solid rgba(79, 157, 120, .42);
   transform: translateY(-2px);
 }
 
@@ -208,5 +221,10 @@
 
   .coloring-card.is-blank-mode .coloring-stage {
     min-height: 560px;
+  }
+
+  .coloring-color {
+    width: 36px;
+    height: 36px;
   }
 }
