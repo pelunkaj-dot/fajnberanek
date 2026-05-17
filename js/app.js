@@ -6,7 +6,7 @@ import { renderCollection } from "./modules/collection/collection.js";
 import { renderColoring } from "./modules/coloring/coloring.js";
 import { hasUnlockedCard } from "./storage.js";
 
-const APP_VERSION = "24";
+const APP_VERSION = "25";
 const screen = document.querySelector("#screen");
 
 const state = {
@@ -78,7 +78,9 @@ function renderHome() {
   screen.innerHTML = `
     <section class="home">
       <div class="hero">
-        <div class="hero-mark" aria-hidden="true">🐑</div>
+        <div class="hero-mark hero-mark-image" aria-hidden="true">
+          <img src="assets/icons/app-icon.svg?v=${APP_VERSION}" alt="" />
+        </div>
         <h1>FajnBeránek</h1>
         <p>
           Tiché biblické objevování pro děti.
@@ -101,7 +103,9 @@ function renderHome() {
       </section>
 
       <section class="brand-footer" aria-label="Informace pro rodiče">
-        <div class="brand-footer-icon" aria-hidden="true">🐑</div>
+        <div class="brand-footer-icon" aria-hidden="true">
+          <img src="assets/icons/app-icon.svg?v=${APP_VERSION}" alt="" />
+        </div>
         <div>
           <p class="brand-footer-kicker">Vytvořilo FajnDoučko</p>
           <h2>FajnBeránek je zdarma</h2>
