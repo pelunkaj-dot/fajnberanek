@@ -1,0 +1,19 @@
+{
+  "storyId": "jezis-a-deti",
+  "title": "Poskládej děti u Ježíše",
+  "intro": "Poskládej pokojný obrázek z příběhu o Ježíši a dětech.",
+  "rewardCardId": "nechte-deti-prichazet",
+  "rewardTitle": "Nechte děti přicházet",
+  "rewardEmoji": "✨",
+  "tiles": [
+    { "id": "t1", "emoji": "☀️", "label": "slunce" },
+    { "id": "t2", "emoji": "🧡", "label": "láska" },
+    { "id": "t3", "emoji": "🌼", "label": "květina" },
+    { "id": "t4", "emoji": "🧒", "label": "dítě" },
+    { "id": "t5", "emoji": "✨", "label": "Ježíš" },
+    { "id": "t6", "emoji": "🤲", "label": "požehnání" },
+    { "id": "t7", "emoji": "👨‍👩‍👧", "label": "rodina" },
+    { "id": "t8", "emoji": "🌿", "label": "tráva" },
+    { "id": "t9", "emoji": "🏠", "label": "domov" }
+  ]
+}
