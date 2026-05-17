@@ -6,6 +6,7 @@ import { renderCollection } from "./modules/collection/collection.js";
 import { renderColoring } from "./modules/coloring/coloring.js";
 import { hasUnlockedCard } from "./storage.js";
 
+const APP_VERSION = "20";
 const screen = document.querySelector("#screen");
 
 const state = {
@@ -15,7 +16,8 @@ const state = {
 };
 
 async function loadJson(path) {
-  const response = await fetch(path);
+  const separator = path.includes("?") ? "&" : "?";
+  const response = await fetch(`${path}${separator}v=${APP_VERSION}`, { cache: "no-store" });
 
   if (!response.ok) {
     throw new Error(`Nepodařilo se načíst: ${path}`);
@@ -300,11 +302,23 @@ function renderError(message = "Něco se nepodařilo načíst.") {
 init();
 
 if ("serviceWorker" in navigator) {
-  window.addEventListener("load", () => {
-    navigator.serviceWorker
-      .register("./service-worker.js")
-      .catch((error) => {
-        console.warn("Service worker se nepodařilo zaregistrovat:", error);
-      });
+  window.addEventListener("load", async () => {
+    try {
+      const registration = await navigator.serviceWorker.register(`./service-worker.js?v=${APP_VERSION}`);
+      await registration.update();
+
+      if (registration.waiting) {
+        registration.waiting.postMessage({ type: "SKIP_WAITING" });
+      }
+    } catch (error) {
+      console.warn("Service worker se nepodařilo zaregistrovat:", error);
+    }
+  });
+
+  let refreshing = false;
+  navigator.serviceWorker.addEventListener("controllerchange", () => {
+    if (refreshing) return;
+    refreshing = true;
+    window.location.reload();
   });
 }
