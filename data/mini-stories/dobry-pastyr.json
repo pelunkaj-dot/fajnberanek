@@ -1,0 +1,37 @@
+{
+  "storyId": "dobry-pastyr",
+  "title": "Dobrý pastýř",
+  "rewardCardId": "ztracena-ovecka",
+  "slides": [
+    {
+      "id": "pastyr-01",
+      "emoji": "🐑",
+      "text": "Pastýř měl rád každou svou ovečku."
+    },
+    {
+      "id": "pastyr-02",
+      "emoji": "🌿",
+      "text": "Vodíval je na zelenou pastvu a k čisté vodě."
+    },
+    {
+      "id": "pastyr-03",
+      "emoji": "🔎",
+      "text": "Jedna ovečka se ztratila a nevěděla, kudy zpátky."
+    },
+    {
+      "id": "pastyr-04",
+      "emoji": "🧡",
+      "text": "Pastýř ji nenechal samotnou. Šel ji hledat."
+    },
+    {
+      "id": "pastyr-05",
+      "emoji": "🤲",
+      "text": "Když ji našel, vzal ji opatrně do náruče."
+    },
+    {
+      "id": "pastyr-06",
+      "emoji": "🏠",
+      "text": "Donesl ji domů a měl velikou radost, že je zase s ním."
+    }
+  ]
+}
