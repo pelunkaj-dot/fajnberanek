@@ -2,7 +2,7 @@
   "name": "FajnBeránek",
   "short_name": "Beránek",
   "description": "Tichá biblická webová aplikace pro děti.",
-  "start_url": "./",
+  "start_url": "./?v=23",
   "scope": "./",
   "display": "standalone",
   "orientation": "portrait",
@@ -10,5 +10,12 @@
   "theme_color": "#f6efe3",
   "lang": "cs",
   "categories": ["education", "kids"],
-  "icons": []
+  "icons": [
+    {
+      "src": "assets/icons/app-icon.svg",
+      "sizes": "512x512",
+      "type": "image/svg+xml",
+      "purpose": "any maskable"
+    }
+  ]
 }
