@@ -37,6 +37,6 @@
     "subtitle": "Ježíš má děti rád",
     "age": "4+",
     "icon": "✨",
-    "modules": ["mini-stories", "coloring", "find-scene", "cards"]
+    "modules": ["mini-stories", "find-scene", "puzzle", "cards"]
   }
 ]
