@@ -160,9 +160,6 @@ async function openModule(story, moduleId) {
   renderModulePlaceholder(story, moduleId);
 }
 
-  renderModulePlaceholder(story, moduleId);
-}
-
 function renderModulePlaceholder(story, moduleId) {
   const module = state.modules.find((item) => item.id === moduleId);
 
