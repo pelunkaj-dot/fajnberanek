@@ -25,7 +25,7 @@ const palette = [
   "#ffffff"
 ];
 
-export async function renderColoring({ screen, story, onBack }) {
+export async function renderColoring({ screen, story, stories = [story], onBack }) {
   try {
     const coloring = await loadColoring(story.id);
     const colors = Object.fromEntries(coloring.parts.map((part) => [part.id, part.defaultColor]));
@@ -33,6 +33,7 @@ export async function renderColoring({ screen, story, onBack }) {
     renderColoringBoard({
       screen,
       story,
+      stories,
       coloring,
       colors,
       selectedColor: palette[0],
@@ -46,13 +47,23 @@ export async function renderColoring({ screen, story, onBack }) {
   }
 }
 
-function renderColoringBoard({ screen, story, coloring, colors, selectedColor, drawMode, blankMode, onBack }) {
+function renderColoringBoard({ screen, story, stories, coloring, colors, selectedColor, drawMode, blankMode, onBack }) {
+  const coloringStories = stories.filter((item) => item.modules?.includes("coloring"));
+  const currentIndex = Math.max(0, coloringStories.findIndex((item) => item.id === story.id));
+  const prevStory = coloringStories[(currentIndex - 1 + coloringStories.length) % coloringStories.length] || story;
+  const nextStory = coloringStories[(currentIndex + 1) % coloringStories.length] || story;
+
   screen.innerHTML = `
     <section class="coloring-screen">
       <div class="coloring-card ${blankMode ? "is-blank-mode" : ""}">
         <div class="coloring-top">
           <button class="soft-button coloring-back icon-button" id="backToStory" aria-label="Zpět">←</button>
-          <button class="soft-button icon-button" id="openBlankPaper" aria-label="Volné kreslení">⬜</button>
+
+          <div class="coloring-page-nav">
+            <button class="soft-button icon-button" id="prevColoring" aria-label="Předchozí omalovánka">◀</button>
+            <button class="soft-button icon-button" id="openBlankPaper" aria-label="Volné kreslení">⬜</button>
+            <button class="soft-button icon-button" id="nextColoring" aria-label="Další omalovánka">▶</button>
+          </div>
         </div>
 
         ${blankMode ? "" : `<p class="coloring-kicker">${story.title}</p><h1>${coloring.title}</h1>`}
@@ -86,6 +97,14 @@ function renderColoringBoard({ screen, story, coloring, colors, selectedColor, d
 
   document.querySelector("#backToStory").addEventListener("click", onBack);
 
+  document.querySelector("#prevColoring").addEventListener("click", () => {
+    renderColoring({ screen, story: prevStory, stories, onBack });
+  });
+
+  document.querySelector("#nextColoring").addEventListener("click", () => {
+    renderColoring({ screen, story: nextStory, stories, onBack });
+  });
+
   document.querySelectorAll("[data-color]").forEach((button) => {
     button.addEventListener("click", () => {
       selectedColor = button.dataset.color;
@@ -111,6 +130,7 @@ function renderColoringBoard({ screen, story, coloring, colors, selectedColor, d
       renderColoringBoard({
         screen,
         story,
+        stories,
         coloring,
         colors,
         selectedColor,
@@ -125,6 +145,7 @@ function renderColoringBoard({ screen, story, coloring, colors, selectedColor, d
     drawMode = !drawMode;
     stage.classList.toggle("is-drawing", drawMode);
     toggleDrawButton.textContent = drawMode ? "🪣" : "✏️";
+    prepareCanvas(canvas);
 
     if (drawMode) {
       enableDrawing(canvas, () => selectedColor);
@@ -135,6 +156,7 @@ function renderColoringBoard({ screen, story, coloring, colors, selectedColor, d
     renderColoringBoard({
       screen,
       story,
+      stories,
       coloring,
       colors,
       selectedColor,
@@ -154,6 +176,7 @@ function renderColoringBoard({ screen, story, coloring, colors, selectedColor, d
     renderColoringBoard({
       screen,
       story,
+      stories,
       coloring,
       colors: resetColors,
       selectedColor,
