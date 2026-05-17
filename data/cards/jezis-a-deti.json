@@ -1,0 +1,30 @@
+{
+  "storyId": "jezis-a-deti",
+  "title": "Kartičky z příběhu Ježíš a děti",
+  "cards": [
+    {
+      "id": "jezis-ma-deti-rad",
+      "title": "Ježíš má děti rád",
+      "emoji": "🧡",
+      "description": "Ježíš ukázal, že děti jsou pro něj důležité a mají k němu přicházet."
+    },
+    {
+      "id": "pozehnani",
+      "title": "Požehnání",
+      "emoji": "🤲",
+      "description": "Ježíš děti přijímal laskavě a žehnal jim."
+    },
+    {
+      "id": "nechte-deti-prichazet",
+      "title": "Nechte děti přicházet",
+      "emoji": "✨",
+      "description": "Ježíš řekl, aby děti nikdo neodháněl."
+    },
+    {
+      "id": "radost-deti",
+      "title": "Radost dětí",
+      "emoji": "🧒",
+      "description": "Děti mohou mít radost, že Ježíš je zve k sobě."
+    }
+  ]
+}
