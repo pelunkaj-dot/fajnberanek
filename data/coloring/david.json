@@ -1,0 +1,14 @@
+{
+  "storyId": "david",
+  "title": "David na pastvině",
+  "subtitle": "Vybarvi Davida, ovečku a harfu.",
+  "parts": [
+    { "id": "sky", "label": "nebe", "defaultColor": "#dff4ff" },
+    { "id": "sun", "label": "slunce", "defaultColor": "#fff3b0" },
+    { "id": "grass", "label": "tráva", "defaultColor": "#d8f3dc" },
+    { "id": "davidFace", "label": "David", "defaultColor": "#f2c39b" },
+    { "id": "davidRobe", "label": "Davidův oděv", "defaultColor": "#93c5fd" },
+    { "id": "harp", "label": "harfa", "defaultColor": "#f4c27a" },
+    { "id": "sheep", "label": "ovečka", "defaultColor": "#ffffff" }
+  ]
+}
