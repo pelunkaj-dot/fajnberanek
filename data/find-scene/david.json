@@ -1,0 +1,86 @@
+{
+  "storyId": "david",
+  "title": "Hledej u Davida",
+  "rewardCardId": "davidova-harfa",
+  "intro": "Najdi věci z příběhu o Davidovi.",
+  "scene": [
+    {
+      "id": "david",
+      "label": "David",
+      "emoji": "🧒",
+      "x": 50,
+      "y": 50,
+      "size": "large"
+    },
+    {
+      "id": "ovecka",
+      "label": "ovečka",
+      "emoji": "🐑",
+      "x": 28,
+      "y": 68,
+      "size": "large"
+    },
+    {
+      "id": "harfa",
+      "label": "harfa",
+      "emoji": "🎵",
+      "x": 70,
+      "y": 62,
+      "size": "large"
+    },
+    {
+      "id": "pastvina",
+      "label": "pastvina",
+      "emoji": "🌿",
+      "x": 58,
+      "y": 80,
+      "size": "medium"
+    },
+    {
+      "id": "strom",
+      "label": "strom",
+      "emoji": "🌳",
+      "x": 18,
+      "y": 38,
+      "size": "medium"
+    },
+    {
+      "id": "stitek",
+      "label": "štít",
+      "emoji": "🛡️",
+      "x": 82,
+      "y": 36,
+      "size": "medium"
+    },
+    {
+      "id": "slunce",
+      "label": "slunce",
+      "emoji": "☀️",
+      "x": 76,
+      "y": 16,
+      "size": "small"
+    }
+  ],
+  "tasks": [
+    {
+      "id": "task-01",
+      "targetId": "david",
+      "instruction": "Najdi Davida."
+    },
+    {
+      "id": "task-02",
+      "targetId": "ovecka",
+      "instruction": "Najdi ovečku."
+    },
+    {
+      "id": "task-03",
+      "targetId": "harfa",
+      "instruction": "Najdi harfu."
+    },
+    {
+      "id": "task-04",
+      "targetId": "pastvina",
+      "instruction": "Najdi pastvinu."
+    }
+  ]
+}
