@@ -1,0 +1,30 @@
+{
+  "storyId": "david",
+  "title": "Kartičky z příběhu David",
+  "cards": [
+    {
+      "id": "maly-pastyr",
+      "title": "Malý pastýř",
+      "emoji": "🐑",
+      "description": "David se jako mladý pastýř staral o ovečky a učil se věrnosti."
+    },
+    {
+      "id": "davidova-harfa",
+      "title": "Davidova harfa",
+      "emoji": "🎵",
+      "description": "David hudbou chválil Boha a přinášel pokoj."
+    },
+    {
+      "id": "odvaha",
+      "title": "Odvaha",
+      "emoji": "🛡️",
+      "description": "Davidova odvaha rostla z důvěry v Boha."
+    },
+    {
+      "id": "duvera-bohu",
+      "title": "Důvěra Bohu",
+      "emoji": "✨",
+      "description": "David věděl, že Bůh vidí srdce a pomáhá těm, kdo mu důvěřují."
+    }
+  ]
+}
