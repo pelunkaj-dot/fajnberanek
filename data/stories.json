@@ -21,7 +21,7 @@
     "subtitle": "Pastýř, odvaha a důvěra",
     "age": "6+",
     "icon": "🎵",
-    "modules": ["mini-stories", "puzzle", "cards"]
+    "modules": ["mini-stories", "find-scene", "puzzle", "cards"]
   },
   {
     "id": "dobry-pastyr",
