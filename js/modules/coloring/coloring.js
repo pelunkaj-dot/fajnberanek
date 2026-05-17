@@ -43,19 +43,15 @@ export async function renderColoring({ screen, story, onBack }) {
 }
 
 function renderColoringBoard({ screen, story, coloring, colors, selectedColor, drawMode, blankMode, onBack }) {
-  const modeLabel = blankMode ? "Volné kreslení" : drawMode ? "Čmárej prstem" : "Vybarvuj plochy";
-
   screen.innerHTML = `
     <section class="coloring-screen">
-      <div class="coloring-card">
+      <div class="coloring-card ${blankMode ? "is-blank-mode" : ""}">
         <div class="coloring-top">
-          <button class="soft-button coloring-back" id="backToStory">← Zpět</button>
-          <div class="coloring-mode-label" id="coloringModeLabel">${modeLabel}</div>
+          <button class="soft-button coloring-back icon-button" id="backToStory" aria-label="Zpět">←</button>
+          <button class="soft-button icon-button" id="openBlankPaper" aria-label="Volné kreslení">⬜</button>
         </div>
 
-        <p class="coloring-kicker">${story.title}</p>
-        <h1>${blankMode ? "Volné kreslení" : coloring.title}</h1>
-        <p class="coloring-instruction">${blankMode ? "Prázdný papír pro čmárání prstem. Nic se neukládá, jen si kresli." : coloring.subtitle}</p>
+        ${blankMode ? "" : `<p class="coloring-kicker">${story.title}</p><h1>${coloring.title}</h1>`}
 
         <div class="coloring-stage ${drawMode || blankMode ? "is-drawing" : ""} ${blankMode ? "is-blank" : ""}" id="coloringStage">
           ${blankMode ? renderBlankPaper() : renderStorySvg(coloring.storyId, colors)}
@@ -68,14 +64,11 @@ function renderColoringBoard({ screen, story, coloring, colors, selectedColor, d
           </div>
 
           <div class="coloring-actions">
-            <button class="soft-button" id="toggleDrawMode">
-              ${blankMode ? "Zpět na omalovánku" : drawMode ? "Vybarvuj plochy" : "Čmárej prstem"}
+            <button class="soft-button icon-action" id="toggleDrawMode" aria-label="Přepnout režim">
+              ${blankMode ? "🖼️" : drawMode ? "🪣" : "✏️"}
             </button>
-            <button class="soft-button" id="openBlankPaper">
-              ${blankMode ? "Nový prázdný papír" : "Volné kreslení"}
-            </button>
-            <button class="soft-button" id="clearDrawing">Smazat čmárání</button>
-            <button class="soft-button" id="resetColors">Vyčistit celé</button>
+            <button class="soft-button icon-action" id="clearDrawing" aria-label="Smazat čmárání">🧽</button>
+            <button class="soft-button icon-action" id="resetColors" aria-label="Vyčistit celé">🧹</button>
           </div>
         </div>
       </div>
@@ -84,7 +77,6 @@ function renderColoringBoard({ screen, story, coloring, colors, selectedColor, d
 
   const canvas = document.querySelector("#drawingCanvas");
   const stage = document.querySelector("#coloringStage");
-  const modeLabelNode = document.querySelector("#coloringModeLabel");
   const toggleDrawButton = document.querySelector("#toggleDrawMode");
   prepareCanvas(canvas);
 
@@ -128,8 +120,7 @@ function renderColoringBoard({ screen, story, coloring, colors, selectedColor, d
 
     drawMode = !drawMode;
     stage.classList.toggle("is-drawing", drawMode);
-    modeLabelNode.textContent = drawMode ? "Čmárej prstem" : "Vybarvuj plochy";
-    toggleDrawButton.textContent = drawMode ? "Vybarvuj plochy" : "Čmárej prstem";
+    toggleDrawButton.textContent = drawMode ? "🪣" : "✏️";
 
     if (drawMode) {
       enableDrawing(canvas, () => selectedColor);
@@ -199,11 +190,7 @@ function renderStorySvg(storyId, colors) {
 }
 
 function renderBlankPaper() {
-  return `
-    <div class="coloring-blank-paper" aria-hidden="true">
-      <div>✏️</div>
-    </div>
-  `;
+  return `<div class="coloring-blank-paper" aria-hidden="true"></div>`;
 }
 
 function renderNoahSvg(colors) {
